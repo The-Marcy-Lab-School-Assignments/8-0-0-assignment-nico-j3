@@ -18,14 +18,14 @@ const serveBesties = (req, res, next) => {
     res.send(besties);
 }
 
-
-
-
 //endpoints
 app.get('/', serveIndex)
-app.get('/api/hello', serveHello);
-app.get('/api/name', serveBesties);
 app.get('/about', serveAbout);
+app.get('/api/hello', serveHello);
+
+/* FEEDBACK: I would recommend giving this endpoint a name
+that better describes the data being returned, like '/api/besties' */
+app.get('/api/name', serveBesties);
 
 const port = 8080;
 app.listen(port, () => console.log(`listening at http://localhost:${port}`)); 
